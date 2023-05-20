@@ -1,24 +1,27 @@
 import React, {useState,useEffect} from 'react'
 import MovieCard from './MovieCard'
 
-const MyComponent = () => {
+const MyComponent = (props) => {
     const [results, setResults] = useState([]);
     const [page, setPage] = useState(1);
+    const {catg} = props;
   
     useEffect(() => {
       const fetchData = async () => {
         try {
-          let url = `https://api.themoviedb.org/3/movie/popular?page=${page}&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200&api_key=836c03a343ff77c99b95f34696f9f606`;
-          let data = await fetch(url);
-          let parsedData = await data.json();
-          setResults(parsedData.results);
+          if(catg){
+            let url = `https://api.themoviedb.org/3/movie/${catg}?language=en-US&page=${page}&api_key=27cd734d5a7c24864cfe2d4da48e2832`;
+            let data = await fetch(url);
+            let parsedData = await data.json();
+            setResults(parsedData.results);
+          }
         } catch (error) {
           // Handle error
         }
       };
   
       fetchData();
-    }, [page]);
+    }, [page,catg]);
 
     const handlePrevClick = () =>{
       if(page>1){

@@ -54,14 +54,15 @@ button:hover{
   align-items: center;
 }
 
-.nav-items ul li a{
+.link{
   font-size: 20px;
   color: whitesmoke;
   padding: 10px;
   transition: color 0.3s ease;
 }
 
-.nav-items ul li a:hover{
+.link:hover{
+  cursor: pointer;
   color: #D13900;
 }
 
@@ -71,6 +72,22 @@ button:hover{
   color: #D4D4D4;
   padding: 5px 10px;
   border-radius: 4px;
+}
+
+.dropdown{
+  position: absolute;
+  top: -999px;
+  background-color: #282634;
+  display: none;
+}
+
+.parent-drop:hover .dropdown{
+  height: auto;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  align-items: center;
 }
 
 .movieCard{
