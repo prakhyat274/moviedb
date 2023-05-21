@@ -39,7 +39,9 @@ const Tv = (props) => {
       <div className='row my-3'>
       {
           results.map((movie)=>{
-              return <MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/>
+              return <div key={movie.id} className="col-md-3 my-3">
+                <MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/>
+                </div>
           })
       }
       </div>

@@ -70,7 +70,11 @@ button:hover{
   transition: color 0.3s ease;
 }
 
-.link:hover{
+.link a{
+  color: whitesmoke;
+}
+
+.link:hover,a:hover{
   cursor: pointer;
   color: #D13900;
 }

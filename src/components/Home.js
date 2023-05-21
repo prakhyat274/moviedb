@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div><h1>HOME</h1></div>
+    <div className='container text-center my-5'>
+      <h3>Use Navbar to find your favourite Movie or Show</h3>
+    </div>
   )
 }

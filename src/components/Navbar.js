@@ -1,30 +1,28 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-export default function Navbar(props) {
-  const handleItemClick = (newValue) =>{
-    props.handleCatg(newValue)
-  }
+export default function Navbar() {
   return (
     <div className='navbar'>
       <div className='nav-links'>
         <a href="/" className='nav-logo'><img src="/navlogo.png" alt="MovieDb Logo" /></a>
         <div className='nav-items'>
           <ul>
-          <li><a href="/" className='link'>Home</a></li>
+          <li><Link to="/" className='link'>Home</Link></li>
             <li className='parent-drop link'>Movie
               <ul className='dropdown'>
-                <li onClick={() => handleItemClick("popular")} className='link'>Popular</li>
-                <li onClick={() => handleItemClick("now_playing")} className='link'>Now Playing</li>
-                <li onClick={() => handleItemClick("upcoming")} className='link'>Upcoming</li>
-                <li onClick={() => handleItemClick("top_rated")} className='link'>Top Rated</li>
+                <li className='link'><Link to="/movie-popular">Popular</Link></li>
+                <li className='link'><Link to="/movie-now-playing">Now Playing</Link></li>
+                <li className='link'><Link to="/movie-upcoming">Upcoming</Link></li>
+                <li className='link'><Link to="/movie-top-rated">Top Rated</Link></li>
               </ul>
             </li>
             <li className='parent-drop link'>TV Shows
               <ul className='dropdown'>
-                <li onClick={() => handleItemClick("popular")} className='link'>Popular</li>
-                <li onClick={() => handleItemClick("airing_today")} className='link'>Airing Today</li>
-                <li onClick={() => handleItemClick("on_the_air")} className='link'>On TV</li>
-                <li onClick={() => handleItemClick("top_rated")} className='link'>Top Rated</li>
+                <li className='link'><Link to="/tv-popular">Popular</Link></li>
+                <li className='link'><Link to="/tv-airing-today">Airing Today</Link></li>
+                <li className='link'><Link to="/tv-on-the-air">On TV</Link></li>
+                <li className='link'><Link to="/tv-top-rated">Top Rated</Link></li>
               </ul>
             </li>
           </ul>
@@ -32,7 +30,7 @@ export default function Navbar(props) {
       </div>  
       <div className='nav-items'>
           <ul>
-              <li><a href="/about" className='link'>About MDb</a></li>
+              <li><Link to="/about" className='link'>About MDb</Link></li>
           </ul>
           <input type="text" placeholder='Search' className='search' />
       </div>
