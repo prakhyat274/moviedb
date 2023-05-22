@@ -107,22 +107,13 @@ button:hover{
 }
 
 .movieCard{
-  width: 13rem;
-  overflow: hidden;
+  width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
 .movieCard:hover{
   transform: scale(1.1);
   cursor: pointer;
-}
-
-.movieCard img{
-  transition: transform 0.3s ease-in-out;
-}
-
-.movieCard:hover img{
-  transform: scale(1/1.1);
 }
 
 .movieCard:hover .cardTitle{
@@ -168,8 +159,4 @@ button:hover{
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
-}
-
-.pager{
-  padding-right: 90px;
 }

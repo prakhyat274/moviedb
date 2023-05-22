@@ -35,7 +35,7 @@ const Tv = (props) => {
   
   return (
     <div className='container my-3'>
-      <h3 className='text-center'>Top Rated Shows</h3>
+      <h3 className='text-center'>{props.pgTitle}</h3>
       <div className='row my-3'>
       {
           results.map((movie)=>{
