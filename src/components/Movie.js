@@ -41,7 +41,7 @@ const Movie = (props) => {
           return (
             <div key={movie.id} className="col-md-3 my-3">
               <MovieCard
-                title={movie.original_title}
+                title={movie.title}
                 score={movie.vote_average}
                 imgUrl={movie.poster_path}
               />
