@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 
 const Movie = (props) => {
-  const { catg } = props;
+  const { catg, apiKey } = props;
   const [results, setResults] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -10,7 +10,7 @@ const Movie = (props) => {
     const fetchData = async () => {
       try {
         if (catg) {
-          let url = `https://api.themoviedb.org/3/movie/${catg}?language=en-US&page=${page}&api_key=27cd734d5a7c24864cfe2d4da48e2832`;
+          let url = `https://api.themoviedb.org/3/movie/${catg}?language=en-US&page=${page}&api_key=${apiKey}`;
           let data = await fetch(url);
           let parsedData = await data.json();
           setResults(parsedData.results);
@@ -21,7 +21,7 @@ const Movie = (props) => {
     };
 
     fetchData();
-  }, [page, catg]);
+  }, [page, catg, apiKey]);
 
   const handlePrevClick = () => {
     if (page > 1) {
