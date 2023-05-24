@@ -44,13 +44,13 @@ const Tv = (props) => {
       <div className='row my-3'>
       {
           results.map((movie)=>{
-              return <div key={movie.id} className="col-lg-3 col-md-6 col-xs-12 my-3">
+              return <div key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
                 <MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/>
                 </div>
           })
       }
       </div>
-      <div className='pager d-flex justify-content-center my-4'>
+      <div className='container pager my-4'>
         <button onClick={handlePrevClick}>&larr; Prev</button>
         <button onClick={handleNextClick}>Next &rarr;</button>
       </div>
