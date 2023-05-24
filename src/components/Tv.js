@@ -1,16 +1,17 @@
 import React, {useState,useEffect} from 'react'
 import MovieCard from './MovieCard'
+import { Link } from 'react-router-dom';
 
 const Tv = (props) => {
     const [results, setResults] = useState([]);
     const [page, setPage] = useState(1);
-    const {catg} = props;
+    const {catg, apiKey} = props;
   
     useEffect(() => {
       const fetchData = async () => {
         try {
           if(catg){
-            let url = `https://api.themoviedb.org/3/tv/${catg}?language=en-US&page=${page}&api_key=27cd734d5a7c24864cfe2d4da48e2832`;
+            let url = `https://api.themoviedb.org/3/tv/${catg}?language=en-US&page=${page}&api_key=${apiKey}`;
             let data = await fetch(url);
             let parsedData = await data.json();
             setResults(parsedData.results);
@@ -21,7 +22,7 @@ const Tv = (props) => {
       };
   
       fetchData();
-    }, [page,catg]);
+    }, [page,catg, apiKey]);
 
     const handlePrevClick = () =>{
       if(page>1){
@@ -34,12 +35,16 @@ const Tv = (props) => {
     }
   
   return (
-    <div className='container my-3'>
+    <div className='container my-2'>
       <h3 className='text-center'>{props.pgTitle}</h3>
+      <div className="category-nav">
+          <Link to="/tv-popular">Popular</Link>
+          <Link to="/tv-top-rated">Top Rated</Link>
+        </div>
       <div className='row my-3'>
       {
           results.map((movie)=>{
-              return <div key={movie.id} className="col-md-3 my-3">
+              return <div key={movie.id} className="col-lg-3 col-md-6 col-xs-12 my-3">
                 <MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/>
                 </div>
           })

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
+import {Link} from "react-router-dom"
 
 const Movie = (props) => {
   const { catg, apiKey } = props;
@@ -34,12 +35,16 @@ const Movie = (props) => {
   };
 
   return (
-    <div className="container my-3">
+    <div className="container my-2">
       <h3 className="text-center">{props.pgTitle}</h3>
+      <div className="category-nav">
+        <Link to="/movie-popular">Popular</Link>
+        <Link to="/movie-top-rated">Top Rated</Link>
+      </div>
       <div className="row my-3">
         {results.map((movie) => {
           return (
-            <div key={movie.id} className="col-md-3 my-3">
+            <div key={movie.id} className="col-lg-3 col-md-6 col-xs-12 my-3">
               <MovieCard
                 title={movie.title}
                 score={movie.vote_average}
