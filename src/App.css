@@ -55,7 +55,7 @@ button:hover{
 
 .navbar{
   background: none;
-  min-height: 60px;
+  min-height: 40px;
   padding: 10px 80px;
 }
 
@@ -66,7 +66,7 @@ button:hover{
 }
 
 .nav-logo img{
-  width: 100px;
+  width: 80px;
 }
 
 .nav-links ul{
@@ -154,4 +154,18 @@ button:hover{
 .pager{
   display: flex;
   justify-content: center;
+}
+
+#search{
+  background-color: black;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.search:focus{
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 1);
 }
