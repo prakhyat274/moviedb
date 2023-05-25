@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# MovieDB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The MovieDB is a web application built with React that allows users to browse and search for movies using the TMDB API (The Movie Database). It provides a user-friendly interface to discover information about movies, including details such as title, release date, overview, and ratings.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Browse popular, top-rated, upcoming, and now-playing movies.
+- Search for movies by title.
+- View detailed information about movies, including synopsis, release date, runtime, and average rating.
+- Watch movie trailers and related videos.
+- Get recommendations based on similar movies.
+- Save favorite movies to a watchlist.
+- Responsive design for optimal viewing on desktop and mobile devices.
 
-### `npm start`
+## Installation
+To run the MovieDB App locally on your machine, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository to your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/prakhyat274/moviedb.git
+   ```
+2. Navigate to the project directory:
 
-### `npm test`
+    ```bash
+    cd moviedb
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Obtain an API key from the TMDB website (https://www.themoviedb.org/) by creating an account.
 
-### `npm run build`
+5. Create a `config.js` file in the src directory of the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. Open the `config.js` file and add the following line:
+    ```bash
+    const config = {
+    apiKey: "your-api-key"
+    }
+    export default config
+    ```
+Replace your_api_key_here with your actual API key obtained from the TMDB website.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. Start the development server:
+    ```bash
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+8. Open your browser and visit http://localhost:3000 to access the MovieDB App.
 
-### `npm run eject`
+### Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The React News App relies on the following dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React: JavaScript library for building user interfaces.
+- Bootstrap: CSS framework for responsive and mobile-first web development.
+- react-bootstrap: React components for Bootstrap.
+- react-router-dom: React library for handling routing in a single-page application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These dependencies are automatically installed when running `npm install`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Usage
 
-## Learn More
+The MovieDB App uses the TMDB API to fetch movie data. It supports the following API endpoints:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Fetch popular movies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Endpoint: `https://api.themoviedb.org/3/movie/popular`
 
-### Code Splitting
+  Example Request:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```bash
+    GET /movie/popular?api_key=your_api_key_here
+   ```
+- Search movies:
 
-### Analyzing the Bundle Size
+    Endpoint: `https://api.themoviedb.org/3/search/movie`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Query Parameters:
 
-### Making a Progressive Web App
+    1. `query` : The search query for the movie.
+    2. `api_key` : Your TMDB API key.
+   
+   
+    Example Request: 
+    ```bash
+    GET /search/movie?query=avengers&api_key=your_api_key_here
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions to the MovieDB App are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request to the GitHub repository.
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The MovieDB App is made possible thanks to the following:
 
-### `npm run build` fails to minify
+- The TMDB API ([https://www.themoviedb.org/documentation/api](https://www.themoviedb.org/documentation/api)) for providing access to movie data.
+- React ([https://reactjs.org/](https://reactjs.org/)) for the JavaScript library used in building the user interface.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize the README documentation based on your specific project requirements, including any additional details or information you want to provide.
+
