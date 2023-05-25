@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -7,10 +7,10 @@ export default function Navbar() {
       <div className='nav-links'>
         <Link to="/" className='nav-logo'><img src="/navlogo.png" alt="MovieDb Logo" /></Link>
         <ul>
-        <li><Link to="/">Home</Link></li>
-          <li><Link to="/movie-popular">Movie</Link></li>
-          <li><Link to="/tv-popular">TV Shows</Link></li>
-          <li><Link to="/search">Search</Link></li>
+        <li><NavLink activeClassName="active" to="/">Home</NavLink></li>
+          <li><NavLink activeClassName="active" to="/movie-popular">Movie</NavLink></li>
+          <li><NavLink activeClassName="active" to="/tv-popular">TV Shows</NavLink></li>
+          <li><NavLink activeClassName="active" to="/search">Search</NavLink></li>
         </ul>
       </div>
     </div>
