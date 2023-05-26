@@ -28,7 +28,7 @@ function App() {
         <Route exact path ="/movie-top-rated" element={<Movie pgTitle="Top Rated Movies" catg="top_rated" apiKey={apiKey} changeId={changeId}/>}/>
         <Route exact path ="/tv-popular" element={<Tv pgTitle="Popular TV Shows" catg="popular" apiKey={apiKey} changeId={changeId}/>}/>
         <Route exact path ="/tv-top-rated" element={<Tv pgTitle="Top Rated TV Shows" catg="top_rated" apiKey={apiKey} changeId={changeId}/>}/>
-        <Route exact path ="/search" element={<Search apiKey={apiKey}/>}/>
+        <Route exact path ="/search" element={<Search changeId={changeId} apiKey={apiKey}/>}/>
         <Route exact path ="/details" element={<Detail type={type}id={id} apiKey={apiKey}/>}/>
       </Routes>
     </Router>

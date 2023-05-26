@@ -8,6 +8,10 @@ export default function Search(props) {
     const [target,setTarget] = useState("")
     const [catg,setCatg] = useState("movie")
     
+    const handleClick = async (id,catg) =>{
+      await props.changeId(id,catg)
+    }
+
     useEffect(()=>{
       const fetchData = async () => {
         try {
@@ -41,11 +45,11 @@ export default function Search(props) {
             results.map((movie)=>{
               if(catg==="movie")
               return(
-                movie.poster_path && <div key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
-                  <MovieCard
+                movie.poster_path && <div onClick={() => handleClick(movie.id,catg)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
+                  <Link to="/details"><MovieCard
                   title={movie.title}
                   score={movie.vote_average}
-                  imgUrl={movie.poster_path}/>
+                  imgUrl={movie.poster_path}/></Link>
                 </div>
               )
               else

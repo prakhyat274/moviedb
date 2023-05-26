@@ -45,7 +45,7 @@ const Tv = (props) => {
           <Link to="/tv-popular">Popular</Link>
           <Link to="/tv-top-rated">Top Rated</Link>
         </div>
-      <div className='row my-3'>
+      <div className='row my-1'>
       {
           results.map((movie)=>{
               return <div onClick={() => handleClick(movie.id)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">

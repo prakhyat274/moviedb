@@ -29,10 +29,10 @@ export default function Detail(props) {
               </div>
             </div>
             <div className='detailSum'>
-              <h3>{result.original_name}</h3>
-              <h6 style={{fontWeight:"900", paddingTop:"40px"}}>Overview</h6>
-              <p style={{fontWeight:"100", paddingTop:"20px"}}>{result.overview}</p>
-              <a href="https://youtube.com/" target='_blank' rel="noreferrer"><div className='trailerLink'>
+              <h3 className='detailSumTitles'>{result.original_name}</h3>
+              <h6 className='detailSumTitles' style={{fontWeight:"900", paddingTop:"40px"}}>Overview</h6>
+              <p className='detailSumTitles' style={{fontWeight:"100", paddingTop:"20px"}}>{result.overview}</p>
+              <a className='trailerLink' href="https://youtube.com/" target='_blank' rel="noreferrer"><div>
                 <h4 className='text-center'>Watch Trailer</h4>
               </div></a>
             </div>

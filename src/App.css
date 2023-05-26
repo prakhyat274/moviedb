@@ -68,7 +68,7 @@ li .active{
 }
 
 .nav-logo img{
-  width: 80px;
+  width: 100px;
 }
 
 .nav-links ul{
@@ -84,10 +84,12 @@ li .active{
 
 .category-nav{
   padding: 0 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .category-nav a{
-  margin-right: 30px;
+  margin: 0 30px;
 }
 
 .active-sub{
@@ -178,6 +180,7 @@ li .active{
 
 .detailBody{
   display: flex;
+  justify-content: center;
 }
 
 .detailPoster{
@@ -211,4 +214,54 @@ li .active{
   padding: 10px 20px;
   border-radius: 5px;
   bottom: 0;
+}
+
+@media screen and (max-width:1200px) {
+  .movieCard{
+    width: 200px;
+  }
+
+  .moviePoster img{
+    height: 325px;
+    width: 200px;
+  }
+
+  .detailSum{
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .movieCard{
+    width: 250px;
+  }
+
+  .moviePoster img{
+    height: 375px;
+    width: 250px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .navbar{
+    flex-direction: column;
+    min-height: auto;
+  }
+  .nav-links ul{
+    flex-direction: column;
+    display: none;
+  }
+  .detailBody{
+    flex-direction: column;
+    align-items: center;
+  }
+  .detailSumTitles{
+    text-align: center;
+  }
+  .trailerLink{
+    width: 65%;
+  }
 }
