@@ -7,10 +7,10 @@ export default function Navbar() {
       <div className='nav-links'>
         <Link to="/" className='nav-logo'><img src="/navlogo.png" alt="MovieDb Logo" /></Link>
         <ul>
-        <li><NavLink activeClassName="active" to="/">Home</NavLink></li>
-          <li><NavLink activeClassName="active" to="/movie-popular">Movie</NavLink></li>
-          <li><NavLink activeClassName="active" to="/tv-popular">TV Shows</NavLink></li>
-          <li><NavLink activeClassName="active" to="/search">Search</NavLink></li>
+        <li><NavLink activeclassname="active" to="/">Home</NavLink></li>
+          <li><NavLink activeclassname="active" to="/movie-popular">Movie</NavLink></li>
+          <li><NavLink activeclassname="active" to="/tv-popular">TV Shows</NavLink></li>
+          <li><NavLink activeclassname="active" to="/search">Search</NavLink></li>
         </ul>
       </div>
     </div>

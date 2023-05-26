@@ -16,7 +16,7 @@ body,html{
   padding: 0;
 }
 
-.row{
+.row, h4{
   margin: 0;
   padding: 0;
 }
@@ -174,4 +174,41 @@ li .active{
 .search:focus{
   outline: none;
   border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.detailBody{
+  display: flex;
+}
+
+.detailPoster{
+  cursor: pointer;
+  width: 300px;
+}
+
+.detailPoster img{
+  height: 450px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 300px;
+}
+
+.posterTitle{
+  padding: 10px 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #E50914;
+}
+
+.detailSum{
+  position: relative;
+  padding: 40px 80px;
+}
+
+.trailerLink{
+  background-color: #E50914;
+  position: absolute;
+  width: 80%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  bottom: 0;
 }

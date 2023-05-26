@@ -6,6 +6,10 @@ const Tv = (props) => {
     const [results, setResults] = useState([]);
     const [page, setPage] = useState(1);
     const {catg, apiKey} = props;
+
+    const handleClick = async (id,type="tv") =>{
+      await props.changeId(id,type)
+    }
   
     useEffect(() => {
       const fetchData = async () => {
@@ -44,8 +48,8 @@ const Tv = (props) => {
       <div className='row my-3'>
       {
           results.map((movie)=>{
-              return <div key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
-                <MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/>
+              return <div onClick={() => handleClick(movie.id)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
+                <Link to="/details"><MovieCard title={movie.name} score={movie.vote_average} imgUrl={movie.poster_path}/></Link>
                 </div>
           })
       }

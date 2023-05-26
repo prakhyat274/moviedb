@@ -7,6 +7,9 @@ const Movie = (props) => {
   const [results, setResults] = useState([]);
   const [page, setPage] = useState(1);
 
+  const handleClick = async (id,type="movie") =>{
+    await props.changeId(id,type)
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,12 +47,12 @@ const Movie = (props) => {
       <div className="row my-3">
         {results.map((movie) => {
           return (
-            <div key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
-              <MovieCard
+            <div onClick={() => handleClick(movie.id)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
+              <Link to="/details"><MovieCard
                 title={movie.title}
                 score={movie.vote_average}
                 imgUrl={movie.poster_path}
-              />
+              /></Link>
             </div>
           );
         })}
