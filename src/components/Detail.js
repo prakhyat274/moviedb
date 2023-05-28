@@ -7,6 +7,7 @@ export default function Detail(props) {
         const fetchData = async () => {
           try {
             if (id) {
+              console.log(id,type);
               let url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}&append_to_response=videos`;
               let data = await fetch(url);
               let parsedData = await data.json();

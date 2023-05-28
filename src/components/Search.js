@@ -54,11 +54,11 @@ export default function Search(props) {
               )
               else
               return(
-                movie.poster_path && <div key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
-                  <MovieCard
+                movie.poster_path && <div onClick={() => handleClick(movie.id,catg)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
+                  <Link to="/details"><MovieCard
                   title={movie.name}
                   score={movie.vote_average}
-                  imgUrl={movie.poster_path}/>
+                  imgUrl={movie.poster_path}/></Link>
                 </div>
               )
             })
