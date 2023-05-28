@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 export default function Detail(props) {
     const {id, apiKey,type} = props;
     const[result,setResult] = useState()
+    const[videoArray,setVideoArray] = useState([])
+    const[link,setLink] = useState('')
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -11,6 +14,7 @@ export default function Detail(props) {
               let data = await fetch(url);
               let parsedData = await data.json();
               setResult(parsedData);
+              setVideoArray(parsedData.videos.results)
             }
           } catch (error) {
             // Handle error
@@ -19,6 +23,13 @@ export default function Detail(props) {
     
         fetchData();
       }, [id, apiKey,type]);
+
+      useEffect(()=>{const linkKey = videoArray.filter((element)=>element.type === "Trailer")
+      if (linkKey.length > 0) {
+        setLink(linkKey[0].key); // Assuming you want to set the first trailer key
+      } else {
+        setLink('');
+      }},[videoArray])
   if(result){
     return ( 
         <div className='container detailBody' style={{marginTop:"50px"}}>
@@ -32,9 +43,9 @@ export default function Detail(props) {
               <h3 className='detailSumTitles'>{type==="tv"?result.name:result.original_title}</h3>
               <h6 className='detailSumTitles' style={{fontWeight:"900", paddingTop:"40px"}}>Overview</h6>
               <p className='detailSumTitles' style={{fontWeight:"100", paddingTop:"20px"}}>{result.overview}</p>
-              <a className='trailerLink' href="https://youtube.com/" target='_blank' rel="noreferrer"><div>
+              {link && <a className='trailerLink' href={`https://www.youtube.com/watch?v=${link}`} target='_blank' rel="noreferrer"><div>
                 <h4 className='text-center'>Watch Trailer</h4>
-              </div></a>
+              </div></a>}
             </div>
         </div>
       )
