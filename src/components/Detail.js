@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function Detail(props) {
     const {id, apiKey,type} = props;
+    console.log(id)
     const[result,setResult] = useState()
     const[videoArray,setVideoArray] = useState([])
     const[link,setLink] = useState('')
@@ -40,7 +41,8 @@ export default function Detail(props) {
               </div>
             </div>
             <div className='detailSum'>
-              <h3 className='detailSumTitles'>{type==="tv"?result.name:result.original_title}</h3>
+              <h3 className='detailSumTitles'>{type==="tv"?result.name:result.title}</h3>
+              <p>{parseInt(result.vote_average*10)}% • {type==="movie"?result.release_date:result.first_air_date} • {result.status}</p>
               <h6 className='detailSumTitles' style={{fontWeight:"900", paddingTop:"40px"}}>Overview</h6>
               <p className='detailSumTitles' style={{fontWeight:"100", paddingTop:"20px"}}>{result.overview}</p>
               {link && <a className='trailerLink' href={`https://www.youtube.com/watch?v=${link}`} target='_blank' rel="noreferrer"><div>

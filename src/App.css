@@ -112,6 +112,10 @@ li .active{
   background-color: #E50914;
 }
 
+.moviePoster{
+  position: relative;
+}
+
 .moviePoster img{
   height: 375px;
   width: 250px;
@@ -129,10 +133,11 @@ li .active{
 }
 
 .rate-component {
-  /* display: inline-block; */
-  display: none;
-  position: relative;
+  display: inline-block;
+  position: absolute;
   width: 40px;
+  top: -100;
+  left: 0;
   height: 40px;
 }
 
@@ -142,7 +147,7 @@ li .active{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #F44336; 
+  background-color: #E50914; 
   border-radius: 50%;
   transform-origin: center center;
   transform: scale(1);
