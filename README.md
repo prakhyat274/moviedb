@@ -8,8 +8,6 @@ The MovieDB is a web application built with React that allows users to browse an
 - Search for movies by title.
 - View detailed information about movies, including synopsis, release date, runtime, and average rating.
 - Watch movie trailers and related videos.
-- Get recommendations based on similar movies.
-- Save favorite movies to a watchlist.
 - Responsive design for optimal viewing on desktop and mobile devices.
 
 ## Installation
