@@ -23,7 +23,7 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route exact path ="/" element={<Home/>}/>
+        <Route exact path ="/" element={<Home apiKey={apiKey} changeId={changeId}/>}/>
         <Route exact path ="/movie-popular" element={<Movie pgTitle="Popular Movies" catg="popular" apiKey={apiKey} changeId={changeId}/>}/>
         <Route exact path ="/movie-top-rated" element={<Movie pgTitle="Top Rated Movies" catg="top_rated" apiKey={apiKey} changeId={changeId}/>}/>
         <Route exact path ="/tv-popular" element={<Tv pgTitle="Popular TV Shows" catg="popular" apiKey={apiKey} changeId={changeId}/>}/>
