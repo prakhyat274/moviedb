@@ -48,7 +48,7 @@ export default function Search(props) {
                 movie.poster_path && <div onClick={() => handleClick(movie.id,catg)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
                   <Link to="/details"><MovieCard
                   title={movie.title}
-                  score={movie.vote_average}
+                  score={Math.floor(movie.vote_average*10)/10}
                   imgUrl={movie.poster_path}/></Link>
                 </div>
               )
@@ -57,7 +57,7 @@ export default function Search(props) {
                 movie.poster_path && <div onClick={() => handleClick(movie.id,catg)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">         
                   <Link to="/details"><MovieCard
                   title={movie.name}
-                  score={movie.vote_average}
+                  score={Math.floor(movie.vote_average*10)/10}
                   imgUrl={movie.poster_path}/></Link>
                 </div>
               )
