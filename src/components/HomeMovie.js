@@ -13,7 +13,7 @@ export default function HomeMovie({movieTrend, changeId, type}) {
                         return (
                             <div onClick={() => handleClick(movie.id,type)} key={movie.id} className="coloumn col-lg-3 col-md-6 col-xs-12 my-3">
                             <Link to="/details"><MovieCard
-                                title={type==="movie"?movie.title:movie.original_name}
+                                title={type==="movie"?movie.title:movie.name}
                                 score={Math.floor(movie.vote_average*10)/10}
                                 imgUrl={movie.poster_path}
                             /></Link>
