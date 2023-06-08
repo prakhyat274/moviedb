@@ -13,7 +13,11 @@ export default function Home({time="day", apiKey, changeId}) {
               let url = `https://api.themoviedb.org/3/trending/movie/${time}?api_key=${apiKey}&language=en-US`;
               let data = await fetch(url);
               let parsedData = await data.json();
-              setMovieTrend(parsedData.results);
+              let limitResult = [];
+              for(let i=0;i<6;i++){
+                limitResult.push(parsedData.results[i])
+              }
+              setMovieTrend(limitResult)
             }
           } catch (error) {
             // Handle error
@@ -25,7 +29,11 @@ export default function Home({time="day", apiKey, changeId}) {
                 let url = `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=en-US`;
                 let data = await fetch(url);
                 let parsedData = await data.json();
-                setTvTrend(parsedData.results);
+                let limitResult = [];
+                for(let i=0;i<6;i++){
+                  limitResult.push(parsedData.results[i])
+                }
+                setTvTrend(limitResult);
               }
             } catch (error) {
               // Handle error
