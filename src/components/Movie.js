@@ -41,8 +41,8 @@ const Movie = (props) => {
     <div className="container my-2">
       <h3 className="text-center">{props.pgTitle}</h3>
       <div className="category-nav">
-        <Link to="/movie-popular">Popular</Link>
-        <Link to="/movie-top-rated">Top Rated</Link>
+        <Link to="/movie-popular" className={catg === "popular"? "active-sub":""}>Popular</Link>
+        <Link to="/movie-top-rated" className={catg === "top_rated"? "active-sub":""}>Top Rated</Link>
       </div>
       <div className="row my-1">
         {results.map((movie) => {

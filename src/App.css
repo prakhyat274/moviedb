@@ -1,4 +1,5 @@
 *{
+  box-sizing: border-box;
   margin: 0;
   color: whitesmoke;
   font-size: 20px;
@@ -58,14 +59,11 @@ li .active{
 
 .navbar{
   background: none;
-  min-height: 40px;
   padding: 10px 80px;
 }
 
 .nav-links{
-  display: flex;
   height: 60px;
-  align-items: center;
 }
 
 .nav-logo img{
@@ -279,11 +277,12 @@ li .active{
 
 @media screen and (max-width:767px) {
   .navbar{
-    flex-direction: column;
-    min-height: auto;
+    /* flex-direction: column;
+    min-height: auto; */
+    justify-content: center;
   }
   .nav-links ul{
-    flex-direction: column;
+    /* flex-direction: column; */
     display: none;
   }
   .detailBody{

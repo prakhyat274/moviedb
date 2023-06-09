@@ -36,7 +36,7 @@ export default function Search(props) {
   return (
     <div className='container'>
         <div className="category-nav my-3">
-            <Link className={catg === 'movie' ? 'active-sub' : ''} onClick={() => setCatg("movie")}>Moives</Link>
+            <Link className={catg === 'movie' ? 'active-sub' : ''} onClick={() => setCatg("movie")}>Movies</Link>
             <Link className={catg === 'tv' ? 'active-sub' : ''} onClick={() => setCatg("tv")}>TV Shows</Link>
         </div>
         <input onChange={handleSearchChange} type='text' placeholder='Search' id='search'/>
